@@ -43,6 +43,12 @@
      }
      
      function viewStorage(){
+       
+        var list = document.getElementById("list")
+        while(list.firstChild)list.removeChild(list.firstChild);
+       
+       for(var i=0;i<storage.length;i++){
+         var _key = storage.key(i);
      
      var list = document.getElement("tr");
      var list = document.getElement("td");
