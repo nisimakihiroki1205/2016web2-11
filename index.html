@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>HTMLS AP1</title>
+  </head>
+  <body>
+  <section id="main">
+   保存するキー:<input id="textkey" type="text"/>
+   保存する値:<input id="textdata" type="text"/>
+   <button id="button" onclick="setsessionStorage()">保存</button>
+   <button id="button" onclick="removeStorage()">削除</button>
+   <button id="button" onclick="removeallStorage()">ラスゴ</button>
+   <table border="1">
+    <tr>
+    <th>キー</th><th>値</th>
+    </tr>
+    <tbody id="list">
+    </tbody>
+    </table>
+   </section>
+   
+   <script type="texxt/javascript">
+   if(typeof sessionStorage === 'undefined'){
+    window.alert("この環境ではWeb Storageが使えません");
+    }
+   else{
+    var storage = sessionStorage;
+    
+    function setsessionStorage(){
+    
+    var key = document.getElemetById("textkey").value;
+    var value = document.getElemetById("textdata").value;
+    
+    if(key && value){
+     storage.setItem(key,valeer);
+     
+     key="";
+     value = "";
+     
+     viewStorage();
+     }
+     
+     function viewStorage(){
+     
+     var list = document.getElement("tr");
+     var list = document.getElement("td");
+     var list = document.getElement("td");
+     list.appendChild(th);
+     tr.appendChild(td1);
+     tr.appendChild(td2);
+     td1.innerHTML = _key;
+     td2.innerHtML = storage.getItem(_key);
+     }
+     }
+     
+     function removeStorage(){
+      var key = document.getElrmentById("textkey").value;
+      storage.removeItem(key);
+      key = "";
+      viewStorage();
+      }
+      
+      function removeallStorage(){
+       storage.clear();
+       viewStorage();
+       }
+       }
+      </script>
+      
+      </body>
+      </html>
